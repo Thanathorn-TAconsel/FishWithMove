@@ -18,20 +18,19 @@ void setup() {
 
 boolean fc = false;
 boolean fm = true;
-float cx,cy,mx,my;
+float cx, cy, mx, my;
 void draw() {
   fill(184, 236, 255);
-    rect(0, 0, width, height/4);
-
-    fill(0, 187, 255);
-    rect(0, height/4, width, height);
+  rect(0, 0, width, height/4);
+  fill(0, 187, 255);
+  rect(0, height/4, width, height);
   if (mousePressed && ((mouseX >= nf.pos.x && mouseX <= nf.pos.x + 200 && mouseY >= nf.pos.y && mouseY <= nf.pos.y + 200) || !fm)) {
     if (fm) {
-        fm = false;
-        cx = nf.pos.x;
-        cy = nf.pos.y;
-        mx = mouseX;
-        my = mouseY;
+      fm = false;
+      cx = nf.pos.x;
+      cy = nf.pos.y;
+      mx = mouseX;
+      my = mouseY;
     }
     nf.pos.x = cx + (mouseX - mx);
     nf.pos.y = cy + (mouseY - my);
@@ -45,10 +44,7 @@ void draw() {
       dots.add(dot);
       fc = false;
     }
-    
     if (dots.size() > 0) {
-
-
       for (int i = 0; i < dots.size(); i++) {
         Dot dot = dots.get(i);
         if (dot.pos.y > height/4) {
@@ -69,11 +65,11 @@ void draw() {
     }
     if (mousePressed) { 
       if (!fc) {
-        dot = new Dot(new Vector(mouseX, mouseY), new Vector(0, 0), new Vector(0, 0), 5, 10);
+        dot = new Dot(new Vector(random(width) , random(height) ), new Vector(0, 0), new Vector(0, 0), 5, 10);
 
         fc = true;
       }
-      dot.move(new Vector(mouseX, mouseY));
+      dot.move(new Vector(random(width), random(height)));
     }
   }
 }
