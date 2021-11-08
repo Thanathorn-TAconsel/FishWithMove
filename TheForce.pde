@@ -69,7 +69,7 @@ void draw() {
 
         fc = true;
       }
-      dot.move(new Vector(random(width), random(height)));
+      //dot.move(new Vector(random(width), random(height)));
     }
   }
 }
